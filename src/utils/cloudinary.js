@@ -4,9 +4,9 @@ import fs from "fs"
 import dotenv from 'dotenv'
 dotenv.config()
 cloudinary.config({ 
-        cloud_name: process.env.CLOUNDINARY_CLOUD_NAME , 
-        api_key: process.env.CLOUNDINARY_API_KEY, 
-        api_secret: process.env.CLOUNDINARY_API_SECRET
+        cloud_name: process.env.CLOUDINARY_CLOUD_NAME , 
+        api_key: process.env.CLOUDINARY_API_KEY, 
+        api_secret: process.env.CLOUDINARY_API_SECRET
     });
 
 const uploadOnCloudinary=async function (file_path) {
@@ -18,7 +18,7 @@ const uploadOnCloudinary=async function (file_path) {
             resource_type:"auto"
            }
        )
-       console.log("File is uploaded on cloudinary"+uploadResult.url)
+       fs.unlinkSync(file_path)
        return uploadResult
     } catch (error) {
         fs.unlinkSync(file_path)
