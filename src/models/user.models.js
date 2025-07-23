@@ -77,7 +77,7 @@ userSchema.methods.generateRefreshToken=async function(){
         email:this.email,
         username:this.username,
         fullName:this.fullName
-    },process.env.ACCESS_REFRESH_SECRET,{expiresIn:process.env.ACCESS_REFRESH_EXPIRY})
+    },process.env.REFRESH_TOKEN_SECRET,{expiresIn:process.env.REFRESH_TOKEN_EXPIRY})
     
 }
 export const User=mongoose.model("User",userSchema)
