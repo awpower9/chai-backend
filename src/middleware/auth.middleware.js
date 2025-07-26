@@ -20,5 +20,4 @@ export const verifyJWT=async (req,res,next)=>{
     } catch (error) {
         return next(new ApiError(400,"Invalid access token"));
     }
-
 }
